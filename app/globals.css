@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Color Variables in Hex Codes */
+    --background: #ffffff; /* black */
+    --foreground: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --card: #ffffff; /* white */
+    --card-foreground: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --popover: #ffffff; /* white */
+    --popover-foreground: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --primary: #685ea3; /* Your primary color */
+    --primary-foreground: #685ea3; /* Your primary color (same) */
+    --secondary: #f69314; /* hsl(240, 4.8%, 95.9%) */
+    --secondary-foreground: #ffc850; /* hsl(240, 5.9%, 10%) */
+    --muted: #f1f1f1; /* hsl(240, 4.8%, 95.9%) */
+    --muted-foreground: #636d77; /* hsl(240, 3.8%, 46.1%) */
+    --accent: #f1f1f1; /* hsl(240, 4.8%, 95.9%) */
+    --accent-foreground: #1a1a2e; /* hsl(240, 5.9%, 10%) */
+    --destructive: #ff8f00; /* hsl(0, 84.2%, 60.2%) */
+    --destructive-foreground: #ffffff; /* hsl(0, 0%, 98%) */
+    --border: #d1d1d6; /* hsl(240, 5.9%, 90%) */
+    --input: #d1d1d6; /* hsl(240, 5.9%, 90%) */
+    --ring: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --chart-1: #f44336; /* hsl(12, 76%, 61%) */
+    --chart-2: #00b8a9; /* hsl(173, 58%, 39%) */
+    --chart-3: #0096c7; /* hsl(197, 37%, 24%) */
+    --chart-4: #ff6f00; /* hsl(43, 74%, 66%) */
+    --chart-5: #d17b00; /* hsl(27, 87%, 67%) */
+    --radius: 0.5rem; /* border radius */
+  }
+
+  .dark {
+    /* Dark mode Colors in Hex */
+    --background: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --foreground: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --card: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --card-foreground: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --popover: #1a1a2e; /* hsl(240, 10%, 3.9%) */
+    --popover-foreground: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --primary: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --primary-foreground: #1a1a2e; /* hsl(240, 5.9%, 10%) */
+    --secondary: #1a1a2e; /* hsl(240, 3.7%, 15.9%) */
+    --secondary-foreground: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --muted: #1a1a2e; /* hsl(240, 3.7%, 15.9%) */
+    --muted-foreground: #a2b3c1; /* hsl(240, 5%, 64.9%) */
+    --accent: #1a1a2e; /* hsl(240, 3.7%, 15.9%) */
+    --accent-foreground: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --destructive: #ff4c00; /* hsl(0, 62.8%, 30.6%) */
+    --destructive-foreground: #f1f1f1; /* hsl(0, 0%, 98%) */
+    --border: #1a1a2e; /* hsl(240, 3.7%, 15.9%) */
+    --input: #1a1a2e; /* hsl(240, 3.7%, 15.9%) */
+    --ring: #f1f1f1; /* hsl(240, 4.9%, 83.9%) */
+    --chart-1: #1e88e5; /* hsl(220, 70%, 50%) */
+    --chart-2: #43a047; /* hsl(160, 60%, 45%) */
+    --chart-3: #ffb74d; /* hsl(30, 80%, 55%) */
+    --chart-4: #9c27b0; /* hsl(280, 65%, 60%) */
+    --chart-5: #d32f2f; /* hsl(340, 75%, 55%) */
+  }
+}
+
+@layer base {
+  /* * {
+    @apply border-border;
+  } */
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Loader container */
+
+.loader svg {
+  animation: l6 2s infinite;
+  transform-origin: center; /* Ensure spin around the center */
+}
+
+@keyframes l6 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes dot-keyframes {
+  0% {
+    opacity: .6;
+    transform: scale(1, 1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+
+  100% {
+    opacity: .6;
+    transform: scale(1, 1);
+  }
+}
+
+.loading-dots {
+  text-align: center;
+  width: 100%;
+}
+.loading-dots--dot{
+  animation: dot-keyframes 1.5s infinite ease-in-out;
+}
+
+.loading-dots--dot:nth-child(2) {
+  animation-delay: .5s;
+  margin: 0 4px;
+}
+
+.loading-dots--dot:nth-child(3) {
+  animation-delay: 1s;
+}
