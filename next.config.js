@@ -19,4 +19,12 @@ module.exports = {
 
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://ec2-100-27-214-198.compute-1.amazonaws.com:8000/api/:path*",
+      },
+    ];
+  },
 };
