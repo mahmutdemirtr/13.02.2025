@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wa4r1i3zwjv)2gxx^4)0dx9h8qyi1zhe3+@3unxswb4k(fd1c%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -141,7 +141,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://54.80.83.245:3000',
     'http://54.80.83.245:8000',
-    'https://main.d1hqwvegm52udg.amplifyapp.com',
+    'https://main.dj710bgc45rcj.amplifyapp.com',
 ]
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
