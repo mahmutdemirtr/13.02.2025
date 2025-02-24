@@ -37,7 +37,7 @@ export default function page() {
         if (!userData) {
             scrapeData();
         }
-    }, [userData]);
+    }, []);
 
     return userData ? (
         <div className='max-w-[767px] mx-auto relative bg-gradient-to-br text-white from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
