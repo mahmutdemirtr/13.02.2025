@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+from decouple import config
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
@@ -64,9 +64,8 @@ def login_with_credentials(driver, username, password):
         return False
 
 def perform_login():
-    load_dotenv(dotenv_path='.env', override=True)
-    USERNAME = 'latfiah9'
-    PASSWORD = 'Aa121211234?'
+    USERNAME = config('USERNAME')
+    PASSWORD = config('PASSWORD')
 
     if not USERNAME or not PASSWORD:
         raise ValueError("Username or password not found in environment variables")

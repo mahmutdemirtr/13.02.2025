@@ -10,8 +10,13 @@ import paymentMethods from '@/public/images/payment-methods.png';
 import Link from 'next/link';
 
 
+
 export default function Pricing() {
     const [activePlan, setActivePlan] = useState('monthly');
+
+    const handleCheckout = () => {
+        axios
+    }
 
     return (
         <div className='max-w-[767px] mx-auto relative pb-4 bg-gradient-to-br from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>

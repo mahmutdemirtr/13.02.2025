@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.conf import settings
+from rest_framework.decorators import api_view
+import stripe
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -7,6 +10,7 @@ from .models import Email, Survey, SearchedUsername
 from .serializer import EmailSerializer, SurveySerializer
 from .scrape_insta import fetch_user
 
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
 class EmailViewSet(ModelViewSet):
@@ -80,3 +84,23 @@ class ScrapeData(APIView):
         user_info = fetch_user(username)
         print(user_info)
         return Response(user_info)
+
+@api_view(["POST"])
+def process_payment(request):
+    try:
+        payment_method_id = request.data.get("payment_method_id")
+        if not payment_method_id:
+            return Response({"error": "Payment method ID is required"}, status=400)
+
+        intent = stripe.PaymentIntent.create(
+            amount=990,  # Amount in cents
+            currency="usd",
+            payment_method=payment_method_id,
+            confirm=True,
+            return_url="http://127.0.0.1:3000/"
+        )
+
+        return Response({"success": True, "payment_intent": intent.id})
+
+    except stripe.error.CardError as e:
+        return Response({"error": str(e)}, status=400)
