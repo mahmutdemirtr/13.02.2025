@@ -23,13 +23,13 @@ export default function Unlock() {
         axiosInstance.post('/api/emails/', {
             email: email,
         })
-        .then(res => router.push('/unlock-steps'))
-        .catch(err => console.error(err))
+            .then(res => router.push('/profile'))
+            .catch(err => console.error(err))
     }
 
     return (
-        <div className='max-w-[767px] mx-auto relative pb-4 bg-gradient-to-br from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
-            <div className='pt-28'>
+        <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
+            <div className='max-w-[430px] mx-auto relative pb-4'>            <div className='pt-28'>
                 <div className='flex flex-col gap-3 italic text-white items-center px-3 text-center'>
                     <h1 className='text-3xl font-extrabold'>Are You Ready? </h1>
                     <h4 className='text-lg font-bold'>Enter Your Email to Unlock the Account 🔓</h4>
@@ -64,6 +64,7 @@ export default function Unlock() {
                     </Button>
                 </div>
             </div>
+            </div>
         </div>
-    )
+    );
 }

@@ -20,17 +20,17 @@ export default function Search() {
   const { userData, setUserData } = useInstaData()
 
   const storeUsername = (username, router) => {
-      axiosInstance.post('/api/store_username/', {
-          username: username,
-      },)
+    axiosInstance.post('/api/store_username/', {
+      username: username,
+    },)
       .then(res => console.log(res.data))
       .catch(err => console.error(err))
   }
-  
+
 
   const scrapeData = () => {
     axiosInstance.get('/api/scrape')
-    .then(res => {
+      .then(res => {
         setUserData(() => ({
           posts: res.data.posts,
           followers: res.data.followers,
@@ -40,8 +40,8 @@ export default function Search() {
           username: username,
         }))
         setLoading(false)
-    })
-    .catch(err => console.error(err))
+      })
+      .catch(err => console.error(err))
   }
 
   useEffect(() => {
@@ -50,8 +50,8 @@ export default function Search() {
   }, [])
 
   return (
-    <div className='max-w-[767px] mx-auto relative pb-4 bg-gradient-to-br from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
-      <div className='relative w-3/4 mx-auto py-28'>
+    <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
+      <div className='max-w-[430px] mx-auto relative pb-4'>      <div className='relative w-3/4 mx-auto py-28'>
         <Input
           type='email'
           placeholder="@"
@@ -78,14 +78,15 @@ export default function Search() {
             height={'auto'} />
         </button>
       </div>
-      <div className='flex flex-col gap-4 px-6'>
-        { !loading ?
-          <>
-            <SearchResultsCard userData={userData}/>
-          </>
-          :
-          <Loader loadingType='fetchLoader'/>
-        }
+        <div className='flex flex-col gap-4 px-6'>
+          {!loading ?
+            <>
+              <SearchResultsCard userData={userData} />
+            </>
+            :
+            <Loader loadingType='fetchLoader' />
+          }
+        </div>
       </div>
     </div>
   )

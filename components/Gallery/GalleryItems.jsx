@@ -17,7 +17,7 @@ export default function GalleryItems({ isPaid, isUnlocked }) {
     { id: 3, imgSrc: galImage3 },
     { id: 4, imgSrc: galImage4 },
     { id: 5, imgSrc: galImage5 },
-    { id: 6, imgSrc: galImage6 },
+    { id: 6, imgSrc: galImage6 }
   ];
 
   return (

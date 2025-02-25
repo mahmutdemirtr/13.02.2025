@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function Loader({ loadingType }) {
     return (
-        <div 
-        className={`loader flex items-center justify-center ${loadingType != 'fetchLoader' ? 'h-screen w-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]' : ''}`}
+        <div
+            className={`loader flex items-center justify-center ${loadingType != 'fetchLoader' ? 'h-screen w-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]' : 'flex-col'}`}
         >
             <svg
                 width="142"
@@ -26,6 +26,7 @@ export default function Loader({ loadingType }) {
                     fill="#FFF2F2"
                 />
             </svg>
+            {loadingType === 'fetchLoader' && <p className='text-lg text-white font-bold mt-4'>Please wait</p>}
         </div>
     );
 }

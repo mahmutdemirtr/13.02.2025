@@ -133,8 +133,9 @@ export default function page() {
     return (
         <>
             {renderSubmitLoader ? <SubmitLoader onComplete={() => router.push('/profile')} />
-                : <div className='max-w-[767px] mx-auto relative py-16 px-6 bg-gradient-to-br from-[#FFE6E6] to-[#E1AFD1] min-h-screen w-full'>
-                    <div className='px-6 text-primary'>
+                :
+                <div className='w-full min-h-screen bg-gradient-to-br from-[#FFE6E6] to-[#E1AFD1]'>
+                    <div className='max-w-[430px] mx-auto relative pb-4'>                    <div className='px-6 text-primary'>
                         <div>
                             <h4 className='text-2xl font-bold italic text-center mb-4'>Step {step} of 5</h4>
                             <div className='relative h-2 flex justify-between w-full rounded-full bg-[#CC9FBD] shadow'>
@@ -160,10 +161,11 @@ export default function page() {
                             </div>
                         </div>
                     </div>
-                    <div className='pt-12 px-2 text-primary'>
-                        <h2 className='text-2xl px-6 font-extrabold italic text-center mb-8'>{currentStep.title}</h2>
-                        <div className='flex flex-col'>
-                            <div>{renderOptions}</div>
+                        <div className='pt-12 px-2 text-primary'>
+                            <h2 className='text-2xl px-6 font-extrabold italic text-center mb-8'>{currentStep.title}</h2>
+                            <div className='flex flex-col'>
+                                <div>{renderOptions}</div>
+                            </div>
                         </div>
                     </div>
                 </div>}

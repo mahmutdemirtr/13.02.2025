@@ -10,13 +10,12 @@ import paymentMethods from '@/public/images/payment-methods.png';
 import Link from 'next/link';
 
 
-
 export default function Pricing() {
     const [activePlan, setActivePlan] = useState('monthly');
 
     return (
-        <div className='max-w-[767px] mx-auto relative pb-4 bg-gradient-to-br from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
-            <div className='pt-16 text-white px-6'>
+        <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
+            <div className='max-w-[430px] mx-auto relative pb-4'>            <div className='pt-16 text-white px-6'>
                 <div>
                     <h2 className='flex items-center text-3xl font-extrabold italic mb-2'>
                         Plans and Pricing
@@ -83,6 +82,7 @@ export default function Pricing() {
                         <p className='mt-4 text-[10px] font-medium text-primary-dark'>We accept Visa, American Express, Mastercard, Paypal and Crypto</p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

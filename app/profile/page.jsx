@@ -10,7 +10,7 @@ import iconVideo from '@/public/images/icon-video.svg';
 import iconMarks from '@/public/images/icon-marks.svg';
 import GalleryItems from '@/components/Gallery/GalleryItems';
 
-import { useInstaData } from '@/components/context/InstaDataContext';
+import { useInstaData, isPaid, isUnlocked } from '@/components/context/InstaDataContext';
 import axiosInstance from '@/lib/axios';
 import Loader from '../loading';
 
@@ -18,6 +18,7 @@ export default function page() {
     const { userData, setUserData } = useInstaData();
     const [activeTab, setActiveTab] = useState('gallery');
 
+    // console.log(userData)
     const scrapeData = () => {
         axiosInstance.get('/api/scrape')
             .then(res => {
@@ -32,16 +33,17 @@ export default function page() {
             })
             .catch(err => console.error(err));
     };
-    
+
     useEffect(() => {
         if (!userData) {
             scrapeData();
         }
-    }, []);
+    }, [userData]);
 
+    console.log(typeof userData)
     return userData ? (
-        <div className='max-w-[767px] mx-auto relative bg-gradient-to-br text-white from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
-            <div className='flex flex-col gap-6 pt-16 px-5'>
+        <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
+            <div className='max-w-[430px] mx-auto relative pb-4'>            <div className='flex flex-col gap-6 pt-16 px-5'>
                 <div className='w-full flex justify-center rounded-lg'>
                     <Image
                         src={userData.image_url}
@@ -70,40 +72,41 @@ export default function page() {
                 </div>
 
             </div>
-            <div className='w-full flex justify-between items-center p-0.5 mt-4'>
-                <button
-                    onClick={() => setActiveTab('gallery')}
-                    className={`w-1/3 flex justify-center items-center h-12 border-b transition-colors ${activeTab === 'gallery' ? 'border-black ' : 'border-theme-gray'} text-center`}
-                >
-                    <Image
-                        src={iconGallery}
-                        alt='icon'
-                        height={'auto'}
-                    />
-                </button>
-                <button
-                    onClick={() => setActiveTab('video')}
-                    className={`w-1/3 flex justify-center items-center h-12 border-b transition-colors ${activeTab === 'video' ? 'border-black ' : 'border-theme-gray'} text-center`}
-                >
-                    <Image
-                        src={iconVideo}
-                        alt='icon'
-                        height={'auto'}
-                    />
-                </button>
-                <button
-                    onClick={() => setActiveTab('marks')}
-                    className={`w-1/3 flex justify-center items-center h-12 border-b transition-colors ${activeTab === 'marks' ? 'border-black ' : 'border-theme-gray'} text-center`}
-                >
-                    <Image
-                        src={iconMarks}
-                        alt='icon'
-                        height={'auto'}
-                    />
-                </button>
+                <div className='w-full flex justify-between items-center p-0.5 mt-4'>
+                    <button
+                        onClick={() => setActiveTab('gallery')}
+                        className={`w-1/3 flex justify-center items-center h-12 border-b transition-colors ${activeTab === 'gallery' ? 'border-black ' : 'border-theme-gray'} text-center`}
+                    >
+                        <Image
+                            src={iconGallery}
+                            alt='icon'
+                            height={'auto'}
+                        />
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('video')}
+                        className={`w-1/3 flex justify-center items-center h-12 border-b transition-colors ${activeTab === 'video' ? 'border-black ' : 'border-theme-gray'} text-center`}
+                    >
+                        <Image
+                            src={iconVideo}
+                            alt='icon'
+                            height={'auto'}
+                        />
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('marks')}
+                        className={`w-1/3 flex justify-center items-center h-12 border-b transition-colors ${activeTab === 'marks' ? 'border-black ' : 'border-theme-gray'} text-center`}
+                    >
+                        <Image
+                            src={iconMarks}
+                            alt='icon'
+                            height={'auto'}
+                        />
+                    </button>
+                </div>
+                <GalleryItems isPaid={isPaid} isUnlocked={isUnlocked} />
             </div>
-            <GalleryItems isPaid={true} isUnlocked={true} />
         </div>
     ) :
-    <Loader loadingType='fetchLoader'/>
+        <Loader loadingType='fetchLoader' />
 }
