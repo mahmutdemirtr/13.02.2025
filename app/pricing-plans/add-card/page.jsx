@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from '@/components/ui/button';
@@ -29,6 +29,11 @@ function AddCardForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [cardHolderName, setCardHolderName] = useState('');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Set to true when the component mounts on the client
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,6 +65,10 @@ function AddCardForm() {
       .catch(err => setError(err.response?.data?.error || 'Payment failed'));
     setLoading(false);
   };
+
+  if (!isClient) {
+    return null; // Render nothing on the server
+  }
 
   return (
     <div className='max-w-[767px] mx-auto relative pb-4 bg-gradient-to-br text-white from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
