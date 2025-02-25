@@ -32,7 +32,7 @@ function AddCardForm() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Set to true when the component mounts on the client
+    setIsClient(true);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -67,7 +67,7 @@ function AddCardForm() {
   };
 
   if (!isClient) {
-    return null; // Render nothing on the server
+    return null; 
   }
 
   return (
