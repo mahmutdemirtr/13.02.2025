@@ -12,7 +12,7 @@ import axiosInstance from '@/lib/axios';
 import outlineCancel from '@/public/images/outline-cancel.svg';
 import paymentMethods from '@/public/images/payment-methods.png';
 
-const stripePromise = loadStripe("");
+const stripePromise = loadStripe("pk_test_51PDMxxHvA8h6eG8EFRCNngzmZtH3bKsJeLYdZgu9geWYPk0AsdzRuYACz4Aj1XD4rgcyEaFHslO26oFB2MKgtzGF000wZgaXb5");
 
 export default function AddCard() {
   return (
@@ -107,8 +107,10 @@ function AddCardForm() {
               </div>
             </div>
           </div>
-
-          {/* Agreement Checkbox */}
+          <div className='flex justify-between mx-4 mt-10 text-xl'>
+              <p>Total</p>
+              <p>9.90 $</p>
+          </div>
           <div className='flex items-start'>
             <Checkbox className='mt-1 mr-2' required />
             <label>
