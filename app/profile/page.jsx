@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import profilePic from '@/public/images/profile-thumb.png';
 import infoAltFill from '@/public/images/info-alt-fill.svg';
@@ -18,6 +18,7 @@ export default function Page() {
     const { userData, setUserData } = useInstaData();
     const [activeTab, setActiveTab] = useState('gallery');
     const [loading, setLoading] = useState(true);  
+    const hasMounted = useRef(false);
 
     const scrapeData = async () => {
         try {
@@ -39,8 +40,10 @@ export default function Page() {
     };
 
     useEffect(() => {
-        if (!userData) {
+        if (hasMounted.current) {
             scrapeData();
+        } else {
+            hasMounted.current = true;
         }
     }, [userData]);  
 
