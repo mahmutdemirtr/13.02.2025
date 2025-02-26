@@ -40,7 +40,7 @@ export default function Page() {
 
     useEffect(() => {
         scrapeData();
-    }, []);  
+    }, [userData]);  
 
     if (loading) {
         return (
