@@ -39,7 +39,9 @@ export default function Page() {
     };
 
     useEffect(() => {
-        scrapeData();
+        if (!userData) {
+            scrapeData();
+        }
     }, [userData]);  
 
     if (loading) {
