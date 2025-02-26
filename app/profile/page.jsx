@@ -17,11 +17,11 @@ import Loader from '../loading';
 export default function Page() {
     const { userData, setUserData } = useInstaData();
     const [activeTab, setActiveTab] = useState('gallery');
-    const [loading, setLoading] = useState(true);  // Track loading state separately
+    const [loading, setLoading] = useState(true);  
 
     const scrapeData = async () => {
         try {
-            setLoading(true);  // Start loading before fetch
+            setLoading(true);
             const res = await axiosInstance.get('/api/scrape');
             setUserData({
                 posts: res.data.posts,
@@ -56,12 +56,14 @@ export default function Page() {
             <div className='max-w-[430px] mx-auto relative pb-4'>
                 <div className='flex flex-col gap-6 pt-16 px-5'>
                     <div className='w-full flex justify-center rounded-lg'>
-                        <Image
-                            src={userData?.image_url || profilePic}
-                            alt='profile pic'
-                            height={120}
-                            width={120}
-                        />
+                    <Image
+                        src={userData?.image_url || profilePic}
+                        alt='profile pic'
+                        height={120}
+                        width={120}
+                        className="rounded-full"
+                    />
+
                     </div>
                     <div className='flex flex-col'>
                         <h4 className='text-2xl font-extrabold'>{userData?.full_name || "Loading..."}</h4>
