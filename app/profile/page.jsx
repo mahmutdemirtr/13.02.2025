@@ -17,7 +17,7 @@ import Loader from '../loading';
 export default function Page() {
     const { userData, setUserData } = useInstaData();
     const [activeTab, setActiveTab] = useState('gallery');
-    const [loading, setLoading] = useState(true);  
+    const [loading, setLoading] = useState(false);  
     const hasMounted = useRef(false);
 
     const scrapeData = async () => {
