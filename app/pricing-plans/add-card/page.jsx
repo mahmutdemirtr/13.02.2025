@@ -1,180 +1,141 @@
-'use client';
+"use client";
 
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
-import { Checkbox } from "@/components/ui/checkbox"
-
-import outlineCancel from '@/public/images/outline-cancel.svg';
-import eyeOpened from '@/public/images/eye-opened.svg';
-import eyeClosed from '@/public/images/eye-closed.svg';
-
-
-
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-
-import paymentMethods from '@/public/images/payment-methods.png';
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { Elements, CardNumberElement, CardExpiryElement, CardCvcElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import axiosInstance from '@/lib/axios';
+import outlineCancel from '@/public/images/outline-cancel.svg';
+import paymentMethods from '@/public/images/payment-methods.png';
 
+const stripePromise = loadStripe("pk_test_51PDMxxHvA8h6eG8EFRCNngzmZtH3bKsJeLYdZgu9geWYPk0AsdzRuYACz4Aj1XD4rgcyEaFHslO26oFB2MKgtzGF000wZgaXb5");
 
 export default function AddCard() {
+  return (
+    <Elements stripe={stripePromise}>
+      <AddCardForm />
+    </Elements>
+  );
+}
+
+function AddCardForm() {
+  const stripe = useStripe();
+  const elements = useElements();
   const router = useRouter();
-  const [cvcInputOpen, setCvcInputOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [cardHolderName, setCardHolderName] = useState('');
 
-  const cveEyeHandler = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!stripe || !elements) return;
 
-    setCvcInputOpen(!cvcInputOpen);
-  }
+    setLoading(true);
+    setError(null);
+
+    const cardElement = elements.getElement(CardNumberElement);
+    const { paymentMethod, error } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement,
+    });
+
+    if (error) {
+      setError(error.message);
+      setLoading(false);
+      return;
+    }
+
+    axiosInstance.post('/api/pay/', {
+      payment_method_id: paymentMethod.id,
+      card_holder_name: cardHolderName,
+    })
+      .then(res => {
+        console.log(res.data);
+        router.push('/');
+      })
+      .catch(err => setError(err.response?.data?.error || 'Payment failed'));
+    setLoading(false);
+  };
 
   return (
     <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
-      <div className='max-w-[430px] mx-auto relative pb-4'>      <div className='pt-16 px-6'>
-        <div className='flex items-center justify-between text-sm pb-10 font-bold'>
-          <h4 className='text-xl'>Add New Card</h4>
-          <button
-            onClick={() => router.back()}
-            aria-label="Clear input"
-          >
-            <Image src={outlineCancel} alt='' height={'auto'} />
-          </button>
-        </div>
-        <div>
-          <div>
-            {/* Card Number  */}
+      <div className='max-w-[430px] mx-auto relative pb-4'>
+
+        <div className='pt-16 px-6'>
+          <div className='flex items-center justify-between text-sm pb-10 font-bold'>
+            <h4 className='text-xl'>Add New Card</h4>
+            <button onClick={() => router.back()} aria-label="Close">
+              <Image src={outlineCancel} alt='Cancel' height={'auto'} />
+            </button>
+          </div>
+
+          <form onSubmit={handleSubmit} className='space-y-6'>
+            {/* Card Holder Name */}
             <div>
-              <label className='font-medium'>Card Number</label>
-              <Input
-                className='h-[45px] mt-2 outline-none focus-visible:ring-none border-none p-4 py-6 shadow-custom-inner-2'
-                placeholder='Enter 12 digit card number'
-              />
-            </div>
-            {/* Validity CVC  */}
-            <div className='flex items-end mt-4'>
-              <div className='mr-2'>
-                <label className='font-medium'>Valid Thru</label>
-                <Select className='font-medium bg-white'>
-                  <SelectTrigger className="w-[110px] h-[45px] mt-2 text-sm py-4 focus-visible:outline-none rounded-full text-gray-500 bg-white">
-                    <SelectValue placeholder="Month" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="january">January</SelectItem>
-                      <SelectItem value="february">February</SelectItem>
-                      <SelectItem value="march">March</SelectItem>
-                      <SelectItem value="april">April</SelectItem>
-                      <SelectItem value="may">May</SelectItem>
-                      <SelectItem value="june">June</SelectItem>
-                      <SelectItem value="july">July</SelectItem>
-                      <SelectItem value="august">August</SelectItem>
-                      <SelectItem value="september">September</SelectItem>
-                      <SelectItem value="october">October</SelectItem>
-                      <SelectItem value="november">November</SelectItem>
-                      <SelectItem value="december">December</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Select className='font-medium bg-white'>
-                  <SelectTrigger className="w-[110px] h-[45px] mt-2 text-sm py-4 focus-visible:outline-none rounded-full text-gray-500 bg-white">
-                    <SelectValue placeholder="Year" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="2025">2025</SelectItem>
-                      <SelectItem value="2026">2026</SelectItem>
-                      <SelectItem value="2027">2027</SelectItem>
-                      <SelectItem value="2028">2028</SelectItem>
-                      <SelectItem value="2029">2029</SelectItem>
-                      <SelectItem value="2030">2030</SelectItem>
-                      <SelectItem value="2031">2031</SelectItem>
-                      <SelectItem value="2032">2032</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-              {/* CVC  */}
-              <div className='relative ml-4'>
-                <label className='font-medium'>CVC</label>
-                <div className='relative'>
-                  <Input
-                    className='h-[45px] mt-2 outline-none focus-visible:ring-none border-none p-4 py-6 shadow-custom-inner-2'
-                    placeholder='CVC'
-                    type={cvcInputOpen ? 'text' : 'password'}
-                  />
-                  <div className='absolute right-4 bottom-1 text-2xl text text-gray-500'>
-                    {cvcInputOpen ?
-                      <button
-                        onClick={(e) => cveEyeHandler(e)}
-                      >
-                        <Image
-                          src={eyeOpened}
-                          alt=''
-                          className='text-xl'
-                          height={'auto'} />
-                      </button>
-                      :
-                      <button
-                        onClick={(e) => cveEyeHandler(e)}
-                      >
-                        <Image
-                          src={eyeClosed}
-                          alt=''
-                          className='text-xl'
-                          height={'auto'} />
-                      </button>
-                    }
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-            {/* Holder Name  */}
-            <div className='mt-4'>
               <label className='font-medium'>Card Holder’s Name</label>
               <Input
-                className='h-[45px] mt-2 outline-none focus-visible:ring-none border-none p-4 py-6 shadow-custom-inner-2'
+                className='h-[45px] mt-2 p-4 shadow-custom-inner-2'
                 placeholder='Name on Card'
+                required
+                value={cardHolderName}
+                onChange={(e) => setCardHolderName(e.target.value)}
               />
             </div>
-            <div className='mx-4 border-t-2 mt-10 border-dashed'></div>
+
+            {/* Stripe Card Elements */}
+            <div>
+              <label className='font-medium'>Card Number</label>
+              <div className='h-[45px] mt-2 p-4 bg-white rounded-md shadow-custom-inner-2'>
+                <CardNumberElement options={{ style: { base: { fontSize: '16px' } } }} />
+              </div>
+            </div>
+
+            {/* Expiry Date and CVC */}
+            <div className='flex justify-between space-x-4'>
+              <div className='flex-1'>
+                <label className='font-medium'>Expiry Date</label>
+                <div className='h-[45px] mt-2 p-4 bg-white rounded-md shadow-custom-inner-2'>
+                  <CardExpiryElement options={{ style: { base: { fontSize: '16px' } } }} />
+                </div>
+              </div>
+              <div className='flex-1'>
+                <label className='font-medium'>CVC</label>
+                <div className='h-[45px] mt-2 p-4 bg-white rounded-md shadow-custom-inner-2'>
+                  <CardCvcElement options={{ style: { base: { fontSize: '16px' } } }} />
+                </div>
+              </div>
+            </div>
             <div className='flex justify-between mx-4 mt-10 text-xl'>
-              <p>Total</p>
-              <p>9.90 $</p>
+                <p>Total</p>
+                <p>9.90 $</p>
             </div>
-            <div className='flex items-start mt-12 pr-6'>
-              <Checkbox
-                className='mt-1 mr-2'
-              />
-              <label>By selecting this payment method, you agree to the monthly automatic deduction of the subscription fee. If you wish to cancel your subscription, please contact us by sending an email</label>
+            <div className='flex items-start'>
+              <Checkbox className='mt-1 mr-2' required />
+              <label>
+                By selecting this payment method, you agree to the monthly automatic deduction of the subscription fee.
+                If you wish to cancel your subscription, please contact us via email.
+              </label>
             </div>
-            <div className='flex flex-col items-center text-center mt-12'>
-              <Button
-                variant='white'
-                className='w-72 py-6 mt-9'
-              >
-                Confirm
+
+            {error && <p className='text-red-500 text-sm'>{error}</p>}
+
+            {/* Confirm Button */}
+            <div className='flex flex-col items-center'>
+              <Button type='submit' variant='white' className='w-72 py-6' disabled={loading}>
+                {loading ? 'Processing...' : 'Confirm Payment'}
               </Button>
               <p className='my-4 text-primary-dark'>Payment Methods</p>
-              <Image
-                src={paymentMethods}
-                alt='Payment Methods'
-              />
-              <p className='mt-4 text-[10px] font-medium text-primary-dark'>We accept Visa, American Express, Mastercard, Paypal and Crypto</p>
+              <Image src={paymentMethods} alt='Payment Methods' />
+              <p className='mt-4 text-[10px] font-medium text-primary-dark'>
+                We accept Visa, American Express, Mastercard, Paypal, and Crypto.
+              </p>
             </div>
-          </div>
+          </form>
         </div>
-      </div>
       </div>
     </div>
   );
