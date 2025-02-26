@@ -40,12 +40,10 @@ export default function Page() {
     };
 
     useEffect(() => {
-        if (hasMounted.current) {
+        if (!userData || Object.keys(userData).length === 0) {
             scrapeData();
-        } else {
-            hasMounted.current = true;
         }
-    }, [userData]);  
+    }, []);      
 
     if (loading) {
         return (
