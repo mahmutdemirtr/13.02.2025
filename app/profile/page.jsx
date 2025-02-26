@@ -35,7 +35,9 @@ export default function page() {
     };
 
     useEffect(() => {
-        scrapeData()
+        if (!userData || Object.keys(userData).length === 0) {
+            scrapeData();
+        }
     }, []);
 
     console.log(typeof userData)
