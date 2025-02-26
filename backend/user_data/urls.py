@@ -9,5 +9,6 @@ router.register(r'surveys', SurveyViewSet, basename='survey')
 urlpatterns = [
     path('store_username/', StoreUsername.as_view(), name='store_username'),
     path('scrape/', ScrapeData.as_view(), name='scrape_data'),
-    path('pay/', process_payment, name='process_payment')
+    path('pay/', process_payment, name='process_payment'),
+    path('', include(router.urls))
 ]
