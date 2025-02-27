@@ -10,12 +10,12 @@ import iconVideo from '@/public/images/icon-video.svg';
 import iconMarks from '@/public/images/icon-marks.svg';
 import GalleryItems from '@/components/Gallery/GalleryItems';
 
-import { useInstaData, isPaid, isUnlocked } from '@/components/context/InstaDataContext';
+import { useInstaData } from '@/components/context/InstaDataContext';
 import axiosInstance from '@/lib/axios';
 import Loader from '../loading';
 
 export default function page() {
-    const { userData, setUserData } = useInstaData();
+    const { userData, setUserData, isPaid, isUnlocked } = useInstaData();
     const [activeTab, setActiveTab] = useState('gallery');
 
     // console.log(userData)

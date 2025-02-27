@@ -5,11 +5,14 @@ import { Checkbox } from '@/components/ui/checkbox-lg';
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import { useEmail } from '@/components/context/EmailContext';
+import { useInstaData } from '@/components/context/InstaDataContext';
 import axiosInstance from '@/lib/axios';
 
 export default function page() {
     const router = useRouter();
     const { email } = useEmail();
+    const { setIsUnlocked } = useInstaData();
+    
 
     const [renderSubmitLoader, setRenderSubmitLoader] = useState(false);
     const [step, setStep] = useState(1);
@@ -79,7 +82,7 @@ export default function page() {
             ]
         },
     ];
-
+    
     const currentStep = stepData.find((data) => data.stepCount === step);
 
     const handleOptionChange = (option) => {
@@ -92,9 +95,14 @@ export default function page() {
 
     const handleNextStep = () => {
         if (step < 5) {
-            setStep(step + 1);
+            setTimeout(() => {
+                setStep(step + 1);
+            }, 500);
+
         } else {
-            setRenderSubmitLoader(true);
+            setTimeout(() => {
+                setRenderSubmitLoader(true);
+            }, 500);
         }
     };
 
@@ -109,7 +117,13 @@ export default function page() {
                 device_used: stepDataStore.device,
                 most_used_app_after_insta: stepDataStore.platform,
             })
-                .then((res) => router.push('/profile'))
+                .then((res) => {
+                    // Set the state to true
+                    setIsUnlocked(true);
+
+                    // Navigate to the profile page
+                    router.push('/profile');
+                })
                 .catch((err) => {
                     console.error(err);
                 });
