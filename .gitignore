@@ -1,1 +1,53 @@
-node_modules
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+dist/
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.env
+*.venv
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# Django media and static files
+media/
+staticfiles/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+*.pot
+*.pid
+*.gz
+*.DS_Store
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Debug files
+*.stackdump
+
+# Local development files
+*.local
+
+# macOS files
+.DS_Store
+
+# Testing
+coverage/
+
+# Production
+build/

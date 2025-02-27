@@ -8,7 +8,7 @@ export const InstaDataProvider = (({ children }) => {
     const [userData, setUserData] = useState({});
     const [username, setUsername] = useState('');
     const [isPaid, setIsPaid] = useState(false);
-    const [isUnlocked, setIssUnlocked] = useState(false);
+    const [isUnlocked, setIsUnlocked] = useState(false);
 
     return (
         <InstaDataContext.Provider value={{
@@ -19,7 +19,7 @@ export const InstaDataProvider = (({ children }) => {
             isPaid,
             setIsPaid,
             isUnlocked,
-            setIssUnlocked
+            setIsUnlocked
         }}>
             {children}
         </InstaDataContext.Provider>
