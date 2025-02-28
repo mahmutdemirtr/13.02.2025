@@ -25,12 +25,18 @@ export default function AddCard() {
 function AddCardForm() {
   const stripe = useStripe();
   const elements = useElements();
+
   const router = useRouter();
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const [cardHolderName, setCardHolderName] = useState('');
-  const { pay } = router.query
-  console.log(pay)
+
+  const searchParams = useSearchParams();
+  const plan = searchParams.get('plan');
+  const price = plan == 'yearly' ? '94.90' : '9.90'
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) return;
@@ -53,6 +59,7 @@ function AddCardForm() {
     axiosInstance.post('/api/pay/', {
       payment_method_id: paymentMethod.id,
       card_holder_name: cardHolderName,
+      price: price,
     })
       .then(res => {
         console.log(res.data);
@@ -112,7 +119,7 @@ function AddCardForm() {
             </div>
             <div className='flex justify-between mx-4 mt-10 text-xl'>
                 <p>Total</p>
-                <p>9.90 $</p>
+                <p>{price} $</p>
             </div>
             <div className='flex items-start'>
               <Checkbox className='mt-1 mr-2' required />
