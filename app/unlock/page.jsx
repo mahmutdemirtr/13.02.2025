@@ -17,14 +17,16 @@ import crossCircled from '@/public/images/cross-circle.png'
 export default function Unlock() {
     const { email, setEmail } = useEmail()
     const router = useRouter()
+    const [error, setError] = useState([])
 
     const handleClick = (e) => {
         e.preventDefault()
+        setError([])
         axiosInstance.post('/api/emails/', {
             email: email,
         })
             .then(res => router.push('/profile'))
-            .catch(err => console.error(err))
+            .catch(err => setError(err.response.data.email))
     }
 
     return (
@@ -55,6 +57,9 @@ export default function Unlock() {
                                     className='text-xl'
                                     height={'auto'} />
                             </button>
+                            {error && (
+                                <p className="text-red-500 text-sm mt-2">{error}</p>
+                            )}
                         </div>
                         <Button
                             variant='white'

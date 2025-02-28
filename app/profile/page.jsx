@@ -47,7 +47,7 @@ export default function Page() {
 
     if (loading) {
         return (
-            <div className='max-w-[767px] mx-auto relative pb-4 bg-gradient-to-br from-[#7F73C7] to-[#C097DB] min-h-screen w-full'>
+            <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
                 <div className='flex flex-col gap-4 px-6 py-10'>
                     <Loader loadingType='fetchLoader'/>
                 </div>

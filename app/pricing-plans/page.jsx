@@ -64,7 +64,7 @@ export default function Pricing() {
                     </div>
                     <div className='flex flex-col items-center text-center'>
                         <Link
-                            href={'/pricing-plans/add-card'}
+                            href={{ pathname: '/pricing-plans/add-card', query: { plan: activePlan } }}
                         >
                             <Button
                                 variant='white'

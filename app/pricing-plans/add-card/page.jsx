@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from "@/components/ui/checkbox";
@@ -29,7 +29,8 @@ function AddCardForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [cardHolderName, setCardHolderName] = useState('');
-
+  const { pay } = router.query
+  console.log(pay)
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) return;
