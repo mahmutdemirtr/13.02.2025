@@ -62,7 +62,7 @@ export default function Search() {
       storeUsername(localUsername);
       scrapeData();
     }
-  }, []); // Add localUsername as a dependency
+  }, [queryUsername]); // Add localUsername as a dependency
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]">
