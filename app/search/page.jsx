@@ -69,35 +69,36 @@ export default function Search() {
     <div className="w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]">
       <div className="max-w-[430px] mx-auto relative pb-4">
         <div className="relative w-3/4 mx-auto py-28">
-          <div className='w-3/4 mt-6 lg:flex'>
-
-            <Input
-              type="email"
-              placeholder="@"
-              className="p-6 shadow-lg"
-              onChange={(e) => setLocalUsername(e.target.value)} // Use local state updater
-              onKeyDown={(e) => {
-                if (e.key == 'Enter') {
-                  setLoading(true)
-                  router.push(`/search?username=${encodeURIComponent(localUsername)}`)
-                }
-              }}
-              disabled={loading}
-              value={localUsername} // Use localUsername
-            />
+          <div className="w-full mt-6 flex flex-col lg:flex-row lg:items-center gap-3">
+            <div className="relative w-full lg:max-w-[600px] xl:max-w-[700px] flex-1">
+              <Input
+                type="email"
+                placeholder="@"
+                className="p-6 shadow-lg"
+                onChange={(e) => setLocalUsername(e.target.value)} // Use local state updater
+                onKeyDown={(e) => {
+                  if (e.key == 'Enter') {
+                    setLoading(true)
+                    router.push(`/search?username=${encodeURIComponent(localUsername)}`)
+                  }
+                }}
+                disabled={loading}
+                value={localUsername} // Use localUsername
+              />
+              <button
+                onClick={() => setLocalUsername('')} // Use local state updater
+                aria-label="Clear input"
+                className="absolute right-4 top-[calc(50%-10px)] text-primary"
+              >
+                <Image src={crossCircled} alt="" className="text-xl" height={'auto'} />
+              </button>
+            </div>
             <Button
                 variant='secondary'
-                className='w-full shadow-lg rounded-full mt-4 lg:mt-0 lg:ml-2 lg:h-[50px] p-6 text-lg font-bold hover:bg-primary'
+                className="w-full shadow-lg rounded-full mt-4 lg:mt-0 lg:ml-2 lg:h-[50px] p-6 text-lg font-bold hover:bg-primary lg:hidden"
             >🔓 Unlock Now</Button>
           </div>
 
-          <button
-            onClick={() => setLocalUsername('')} // Use local state updater
-            aria-label="Clear input"
-            className="absolute right-4 top-[calc(50%-10px)] text-primary"
-          >
-            <Image src={crossCircled} alt="" className="text-xl" height={'auto'} />
-          </button>
         </div>
         <div className="flex flex-col gap-4 px-6">
           {!loading ? (

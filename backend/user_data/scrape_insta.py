@@ -136,7 +136,9 @@ def fetch_user(username):
         values['profile_image_url'] = profile_image_url
         print(values)
 
-        full_name_elements = driver.find_elements(By.XPATH, "//header/section[2]/div/div[1]/div[1]/div/a/h2/span")
+        full_name_elements = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//header//h1'))
+        )
 
 
         if full_name_elements:

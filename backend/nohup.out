@@ -4207,3 +4207,55 @@ Django version 4.2.18, using settings 'app.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
+[03/Mar/2025 19:32:29] "POST /api/store_username/ HTTP/1.0" 200 21
+mahmut
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '0', 'followers': '3,469', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHP5o3t1y6QhfzQCnSj1x0BN1PErP0fnDdtHt3SOxFKu1XoC8fAgYvQ4ZPdLXCBXGA&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=8b18d3c5555c412abd0774aa5703ea0e&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAQK1nHhNwujpqvL6GzIXT16HK16o5HHC52fz_deYBhwA&oe=67CBD14F&_nc_sid=7d3ac5'}
+{'posts': '0', 'followers': '3,469', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHP5o3t1y6QhfzQCnSj1x0BN1PErP0fnDdtHt3SOxFKu1XoC8fAgYvQ4ZPdLXCBXGA&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=8b18d3c5555c412abd0774aa5703ea0e&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAQK1nHhNwujpqvL6GzIXT16HK16o5HHC52fz_deYBhwA&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
+{'posts': '0', 'followers': '3,469', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHP5o3t1y6QhfzQCnSj1x0BN1PErP0fnDdtHt3SOxFKu1XoC8fAgYvQ4ZPdLXCBXGA&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=8b18d3c5555c412abd0774aa5703ea0e&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAQK1nHhNwujpqvL6GzIXT16HK16o5HHC52fz_deYBhwA&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
+[03/Mar/2025 19:32:36] "GET /api/scrape/ HTTP/1.0" 200 557
+[03/Mar/2025 19:33:04] "POST /api/store_username/ HTTP/1.0" 200 20
+susan
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AEy3hqiQNmscD7LM6kIj5y5l-FrBB9YNaZLY3nejWHGqM2eDDw9UTaMErHXhJG2P5c&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=9d98d27b8a8744eebc69fe6b440ac117&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDIGeuqAyMYnzYpWwor9TMgbDqhuwWs0QcbubI3e_7kRA&oe=67CBF18A&_nc_sid=7d3ac5'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AEy3hqiQNmscD7LM6kIj5y5l-FrBB9YNaZLY3nejWHGqM2eDDw9UTaMErHXhJG2P5c&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=9d98d27b8a8744eebc69fe6b440ac117&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDIGeuqAyMYnzYpWwor9TMgbDqhuwWs0QcbubI3e_7kRA&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AEy3hqiQNmscD7LM6kIj5y5l-FrBB9YNaZLY3nejWHGqM2eDDw9UTaMErHXhJG2P5c&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=9d98d27b8a8744eebc69fe6b440ac117&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDIGeuqAyMYnzYpWwor9TMgbDqhuwWs0QcbubI3e_7kRA&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+[03/Mar/2025 19:33:10] "GET /api/scrape/ HTTP/1.0" 200 556
+/home/ec2-user/13.02.2025/backend/user_data/scrape_insta.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AHD4zFXmBpjDClJDVxBYyJjINVBV3aiwbqUmh38PCHq5CXlBciDW4-7poDCYDkXwCw&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=2c810c5b8ad14aee8d8628956d868be9&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYDWG9UhvKFvJVZceJL7Lb3n9OP24uquGU-5EzxLFSTkJg&oe=67CBF18A&_nc_sid=7a9f4b'}
+Error occurred while scraping profile data for susan: Message: 
+Stacktrace:
+#0 0x55cb3681814a <unknown>
+#1 0x55cb362b5b80 <unknown>
+#2 0x55cb363070e9 <unknown>
+#3 0x55cb36307271 <unknown>
+#4 0x55cb36355de4 <unknown>
+#5 0x55cb3632cefd <unknown>
+#6 0x55cb3635314a <unknown>
+#7 0x55cb3632cca3 <unknown>
+#8 0x55cb362f8f08 <unknown>
+#9 0x55cb362fa071 <unknown>
+#10 0x55cb367e1b5b <unknown>
+#11 0x55cb367e5ae2 <unknown>
+#12 0x55cb367cd967 <unknown>
+#13 0x55cb367e66d4 <unknown>
+#14 0x55cb367b1c7f <unknown>
+#15 0x55cb36806cd8 <unknown>
+#16 0x55cb36806ea9 <unknown>
+#17 0x55cb36816fc6 <unknown>
+#18 0x7f4fdbe9f832 start_thread
+
+None
+System check identified no issues (0 silenced).
+March 03, 2025 - 19:42:10
+Django version 4.2.18, using settings 'app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
