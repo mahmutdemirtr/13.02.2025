@@ -66,7 +66,7 @@ export default function Search() {
           disabled={loading}
           value={username}
         />
-        {/* <button
+        <button
           onClick={() => setUsername('')}
           aria-label="Clear input"
           className='absolute right-4 top-[calc(50%-10px)] text-primary'>
@@ -75,7 +75,7 @@ export default function Search() {
             alt=''
             className='text-xl'
             height={'auto'} />
-        </button> */}
+        </button>
       </div>
         <div className='flex flex-col gap-4 px-6'>
           {!loading ?
