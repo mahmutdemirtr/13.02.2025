@@ -4259,3 +4259,68 @@ Django version 4.2.18, using settings 'app.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
+[03/Mar/2025 20:05:13] "POST /api/store_username/ HTTP/1.0" 200 21
+mahmut
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '0', 'followers': '3,484', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AG21Bn4bUzZwnxjYCZ_cQpk3eGaQBnWkHMUYpgV43Q1WKQiQCfNBpKCK_KM8ECIFRw&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=f444d003804d4ddfb986e73840289296&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYB6wYGvFuLHBrRG6H3PhIYuofdOxGm7tYizC6awCvaRWA&oe=67CBD14F&_nc_sid=7d3ac5'}
+Not Found: /
+[03/Mar/2025 20:05:25] "GET / HTTP/1.0" 404 2160
+Error occurred while scraping profile data for mahmut: Message: 
+Stacktrace:
+#0 0x558b692b914a <unknown>
+#1 0x558b68d56b80 <unknown>
+#2 0x558b68da80e9 <unknown>
+#3 0x558b68da8271 <unknown>
+#4 0x558b68df6de4 <unknown>
+#5 0x558b68dcdefd <unknown>
+#6 0x558b68df414a <unknown>
+#7 0x558b68dcdca3 <unknown>
+#8 0x558b68d99f08 <unknown>
+#9 0x558b68d9b071 <unknown>
+#10 0x558b69282b5b <unknown>
+#11 0x558b69286ae2 <unknown>
+#12 0x558b6926e967 <unknown>
+#13 0x558b692876d4 <unknown>
+#14 0x558b69252c7f <unknown>
+#15 0x558b692a7cd8 <unknown>
+#16 0x558b692a7ea9 <unknown>
+#17 0x558b692b7fc6 <unknown>
+#18 0x7fa44349f832 start_thread
+
+None
+[03/Mar/2025 20:05:28] "GET /api/scrape/ HTTP/1.0" 200 0
+Not Found: /
+[03/Mar/2025 20:05:34] "GET / HTTP/1.0" 404 2160
+Not Found: /favicon.ico
+[03/Mar/2025 20:06:18] "GET /favicon.ico HTTP/1.0" 404 2211
+/home/ec2-user/13.02.2025/backend/user_data/scrape_insta.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 03, 2025 - 20:06:34
+Django version 4.2.18, using settings 'app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+/home/ec2-user/13.02.2025/backend/user_data/scrape_insta.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 03, 2025 - 20:07:22
+Django version 4.2.18, using settings 'app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+/home/ec2-user/13.02.2025/backend/user_data/scrape_insta.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 03, 2025 - 20:07:28
+Django version 4.2.18, using settings 'app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
