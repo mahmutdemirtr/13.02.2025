@@ -10,6 +10,7 @@ import SearchResultsCard from '@/components/search/SearchResultsCard';
 import axiosInstance from '@/lib/axios';
 import crossCircled from '@/public/images/cross-circle.png';
 import { setUserData, setUsername as setReduxUsername } from '@/features/instaData/instaDataSlice'; // Renamed Redux action
+import { Button } from '@/components/ui/button';
 
 export default function Search() {
   const router = useRouter()
@@ -77,6 +78,7 @@ export default function Search() {
               onChange={(e) => setLocalUsername(e.target.value)} // Use local state updater
               onKeyDown={(e) => {
                 if (e.key == 'Enter') {
+                  setLoading(true)
                   router.push(`/search?username=${encodeURIComponent(localUsername)}`)
                 }
               }}

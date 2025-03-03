@@ -138,6 +138,7 @@ def fetch_user(username):
 
         full_name_elements = driver.find_elements(By.XPATH, "//header/section[2]/div/div[1]/div[1]/div/a/h2/span")
 
+
         if full_name_elements:
             full_name = full_name_elements[0].text
             if full_name:
@@ -182,3 +183,5 @@ def save_profile_image(image_url, username):
     except requests.exceptions.RequestException as e:
         print(f"Error occurred while downloading the image for {username}: {e}")
         return None
+
+print(fetch_user('susan'))
