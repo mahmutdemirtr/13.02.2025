@@ -26,7 +26,12 @@ export default function Loader({ loadingType }) {
                     fill="#FFF2F2"
                 />
             </svg>
-            {loadingType === 'fetchLoader' && <p className='text-lg text-white font-bold mt-4'>Please wait</p>}
+            {loadingType === 'fetchLoader' && (
+                <div className='flex flex-col items-center mt-4 text-white'>
+                    <h4 className='text-xl font-bold '><span className='italic'>Sit Tight, We're On It!</span>  😊</h4>
+                    <p className='text-md mt-2 text-center'>Our system is processing your request. 🤖 We're fetching the profile details for you. 🙏</p>
+                </div>
+            )}
         </div>
     );
 }

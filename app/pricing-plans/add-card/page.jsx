@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from "@/components/ui/checkbox";
@@ -11,6 +11,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import axiosInstance from '@/lib/axios';
 import outlineCancel from '@/public/images/outline-cancel.svg';
 import paymentMethods from '@/public/images/payment-methods.png';
+import { useSelector, useDispatch } from 'react-redux'; // Import useDispatch
+import { setIsUnlocked } from '@/features/instaData/instaDataSlice'; // Import setIsUnlocked action
 
 const stripePromise = loadStripe("pk_test_51PDMxxHvA8h6eG8EFRCNngzmZtH3bKsJeLYdZgu9geWYPk0AsdzRuYACz4Aj1XD4rgcyEaFHslO26oFB2MKgtzGF000wZgaXb5");
 
@@ -25,17 +27,16 @@ export default function AddCard() {
 function AddCardForm() {
   const stripe = useStripe();
   const elements = useElements();
-
   const router = useRouter();
+  const dispatch = useDispatch(); // Initialize useDispatch
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const [cardHolderName, setCardHolderName] = useState('');
 
-  const searchParams = useSearchParams();
-  const plan = searchParams.get('plan');
-  const price = plan == 'yearly' ? '94.90' : '9.90'
+  const totalPriceCount = useSelector((state) => state.priceCount.totalPriceCount);
+  const userData = useSelector((state) => state.instaData.userData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,11 +60,16 @@ function AddCardForm() {
     axiosInstance.post('/api/pay/', {
       payment_method_id: paymentMethod.id,
       card_holder_name: cardHolderName,
-      price: price,
+      price: totalPriceCount,
     })
       .then(res => {
         console.log(res.data);
-        router.push('/');
+
+        // Dispatch setIsUnlocked to update the state
+        dispatch(setIsUnlocked(true));
+
+        // Redirect to the profile page
+        router.push(`/profile/${userData.username}`);
       })
       .catch(err => setError(err.response?.data?.error || 'Payment failed'));
     setLoading(false);
@@ -72,7 +78,6 @@ function AddCardForm() {
   return (
     <div className='w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]'>
       <div className='max-w-[430px] mx-auto relative pb-4'>
-
         <div className='pt-16 px-6'>
           <div className='flex items-center justify-between text-sm pb-10 font-bold'>
             <h4 className='text-xl'>Add New Card</h4>
@@ -117,10 +122,14 @@ function AddCardForm() {
                 </div>
               </div>
             </div>
+
+            {/* Total Price */}
             <div className='flex justify-between mx-4 mt-10 text-xl'>
-                <p>Total</p>
-                <p>{price} $</p>
+              <p>Total</p>
+              <p>{totalPriceCount} $</p>
             </div>
+
+            {/* Terms and Conditions */}
             <div className='flex items-start'>
               <Checkbox className='mt-1 mr-2' required />
               <label>
