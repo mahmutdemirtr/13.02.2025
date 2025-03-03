@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import Loader from '../loading'
 import { Input } from '@/components/ui/input'
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import SearchResultsCard from '@/components/search/SearchResultsCard';
 import { useInstaData } from '@/components/context/InstaDataContext';
@@ -13,6 +13,7 @@ import axiosInstance from '@/lib/axios';
 import crossCircled from '@/public/images/cross-circle.png'
 
 export default function Search() {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const queryUsername = searchParams.get('username');
   const [username, setUsername] = useState(queryUsername || '');
@@ -59,9 +60,7 @@ export default function Search() {
           onChange={(e) => setUsername(e.target.value)}
           onKeyDown={(e) => {
             if (e.key == 'Enter') {
-              setLoading(true)
-              storeUsername(username)
-              scrapeData()
+              router.push(`/search?username=${encodeURIComponent(username)}`)
             }
           }}
           disabled={loading}
