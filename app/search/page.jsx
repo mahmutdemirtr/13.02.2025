@@ -75,9 +75,7 @@ export default function Search() {
             onChange={(e) => setLocalUsername(e.target.value)} // Use local state updater
             onKeyDown={(e) => {
               if (e.key == 'Enter') {
-                setLoading(true);
-                storeUsername(localUsername); // Use localUsername
-                scrapeData();
+                router.push(`/search?username=${encodeURIComponent(localUsername)}`)
               }
             }}
             disabled={loading}
