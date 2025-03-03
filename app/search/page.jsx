@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Loader from '../loading';
@@ -12,6 +12,7 @@ import crossCircled from '@/public/images/cross-circle.png';
 import { setUserData, setUsername as setReduxUsername } from '@/features/instaData/instaDataSlice'; // Renamed Redux action
 
 export default function Search() {
+  const router = useRouter()
   const searchParams = useSearchParams();
   const queryUsername = searchParams.get('username');
   const [localUsername, setLocalUsername] = useState(queryUsername || ''); // Renamed local state
@@ -61,7 +62,7 @@ export default function Search() {
       storeUsername(localUsername);
       scrapeData();
     }
-  }, [localUsername]); // Add localUsername as a dependency
+  }, []); // Add localUsername as a dependency
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]">
