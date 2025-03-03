@@ -57,6 +57,11 @@ export default function Search() {
       .catch((err) => console.error(err));
   };
 
+  const handleSearch = (e) => {
+    setLoading(true)
+    router.push(`/search?username=${encodeURIComponent(localUsername)}`)
+  }
+
   // Fetch data on component mount
   useEffect(() => {
     if (localUsername) {
@@ -78,8 +83,7 @@ export default function Search() {
                 onChange={(e) => setLocalUsername(e.target.value)} // Use local state updater
                 onKeyDown={(e) => {
                   if (e.key == 'Enter') {
-                    setLoading(true)
-                    router.push(`/search?username=${encodeURIComponent(localUsername)}`)
+                    handleSearch()
                   }
                 }}
                 disabled={loading}
@@ -96,6 +100,7 @@ export default function Search() {
             <Button
                 variant='secondary'
                 className="w-full shadow-lg rounded-full mt-4 lg:mt-0 lg:ml-2 lg:h-[50px] p-6 text-lg font-bold hover:bg-primary lg:hidden"
+                onClick={handleSearch}
             >🔓 Unlock Now</Button>
           </div>
 
