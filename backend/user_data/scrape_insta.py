@@ -143,7 +143,7 @@ def fetch_user(username):
             if full_name:
                 values['full_name'] = full_name
             username_element = WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.XPATH, "//section/main/div/header/section//h1"))
+                EC.presence_of_element_located((By.XPATH, "//header//section[2]//a/h2/span"))
             )
             username = username_element.text
             values['username'] = username
