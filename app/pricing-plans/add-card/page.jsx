@@ -39,6 +39,8 @@ function AddCardForm() {
   const userData = useSelector((state) => state.instaData.userData);
   const email = useSelector((state) => state.email.email);
 
+  console.log(email)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) return;
