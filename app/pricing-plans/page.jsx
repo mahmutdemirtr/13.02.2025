@@ -10,11 +10,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setTotalMonthCount, setTotalPriceCount } from '@/features/PricingPlan/PricingPlanSlice'; // Import the actions
 import axiosInstance from '@/lib/axios';
 import { setIsUnlocked } from '@/features/instaData/instaDataSlice';
+import { useRouter } from 'next/navigation';
 
 export default function Pricing() {
   const totalMonthCount = useSelector((state) => state.priceCount.totalMonthCount);
   const totalPriceCount = useSelector((state) => state.priceCount.totalPriceCount);
   const email = useSelector((state) => state.email.email);
+  const router = useRouter();
 
   const dispatch = useDispatch();
 
@@ -25,7 +27,7 @@ export default function Pricing() {
         if (res.data.subscribed) {
           console.log('ok')
           dispatch(setIsUnlocked(true));
-          setTimeout(() => router.push("/"), 100);
+          setTimeout(() => router.push("/"));
         }
       })
       .catch(err => console.error("Error checking subscription", err));
