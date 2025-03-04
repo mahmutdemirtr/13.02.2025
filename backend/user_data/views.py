@@ -109,3 +109,16 @@ def process_payment(request):
 
     except stripe.error.CardError as e:
         return Response({"error": str(e)}, status=400)
+
+@api_view(["POST"])
+def check_subscription(request):
+    email = request.data.get('email')
+
+    if not email:
+        return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        subscription = SubscriptionDetails.objects.get(email=email)
+        return Response({"is_subscribed": True}, status=status.HTTP_200_OK)
+    except SubscriptionDetails.DoesNotExist:
+        return Response({"is_subscribed": False}, status=status.HTTP_200_OK)
