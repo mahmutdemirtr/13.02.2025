@@ -13,6 +13,7 @@ import axiosInstance from '@/lib/axios';
 export default function Pricing() {
   const totalMonthCount = useSelector((state) => state.priceCount.totalMonthCount);
   const totalPriceCount = useSelector((state) => state.priceCount.totalPriceCount);
+  const userData = useSelector((state) => state.instaData.userData);
 
   const dispatch = useDispatch();
 
