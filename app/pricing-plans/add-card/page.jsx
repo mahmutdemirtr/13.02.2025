@@ -61,20 +61,16 @@ function AddCardForm() {
     axiosInstance.post('/api/pay/', {
       payment_method_id: paymentMethod.id,
       card_holder_name: cardHolderName,
-      price: totalPriceCount,
+      email: email,
     })
       .then(res => {
-        return (
-          axiosInstance.post('/api/add_subscriber', {
-            email: email,
-          })
-        )
-      })
-      .then(subscriptionRes => {
+        console.log(res.data);
 
-        dispatch(setIsUnlocked(true))
+        // Dispatch setIsUnlocked to update the state
+        dispatch(setIsUnlocked(true));
 
-        router.push(`/profile/${userData.username}`)
+        // Redirect to the profile page
+        router.push(`/profile/${userData.username}`);
       })
       .catch(err => setError(err.response?.data?.error || 'Payment failed'));
     setLoading(false);

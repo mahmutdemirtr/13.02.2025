@@ -15,6 +15,16 @@ export default function Pricing() {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    axiosInstance.post("/api/check_subscription/", { email: userData.email })
+      .then(res => {
+        if (res.data.is_subscribed) {
+          router.push("/");  // Redirect home if already subscribed
+        }
+      })
+      .catch(err => console.error("Error checking subscription", err));
+  }, []);
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-[#7F73C7] to-[#C097DB]">
       <div className="max-w-[430px] mx-auto relative pb-4">
