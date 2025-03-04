@@ -86,39 +86,64 @@ class ScrapeData(APIView):
         print(user_info)
         return Response(user_info)
 
-class AddSubscriber(ListCreateAPIView):
-    queryset = SubscriptionDetails.objects.all()
-    serializer_class = SubscriptionDetailSerializer
-
 @api_view(["POST"])
-def process_payment(request):
+def process_subscription(request):
     try:
+        email = request.data.get('email')
         payment_method_id = request.data.get("payment_method_id")
-        if not payment_method_id:
+        if not email or not payment_method_id:
             return Response({"error": "Payment method ID is required"}, status=400)
 
-        intent = stripe.PaymentIntent.create(
-            amount=990,  # Amount in cents
-            currency="usd",
-            payment_method=payment_method_id,
-            confirm=True,
-            return_url="http://127.0.0.1:3000/"
+        customers = stripe.Customer.list(email=email).data
+        if customers:
+            customer = customers[0]
+            stripe.PaymentMethod.attach(payment_method_id, customer=customer.id)
+            stripe.Customer.modify(
+                customer.id,
+                invoice_settings={'default_payment_method': payment_method_id}
+            )
+        else:
+            customer = stripe.Customer.create(
+                email=email,
+                payment_method=payment_method_id,
+                invoice_settings={"default_payment_method": payment_method_id},
+            )
+
+        subscription = stripe.Subscription.create(
+            customer=customer.id,
+            items=[{"price": settings.STRIPE_PRICE_ID}],
+            expand=["latest_invoice.payment_intent"],
         )
 
-        return Response({"success": True, "payment_intent": intent.id})
+        payment_intent = subscription.latest_invoice.payment_intent
+        if payment_intent.status != "succeeded":
+            return Response({"error": "Payment failed", "status": payment_intent.status}, status=400)
 
-    except stripe.error.CardError as e:
+        return Response({"success": True, "subscription_id": subscription.id})
+
+    except stripe.error.StripeError as e:
         return Response({"error": str(e)}, status=400)
 
 @api_view(["POST"])
 def check_subscription(request):
-    email = request.data.get('email')
+    email = request.data.get("email")
 
     if not email:
-        return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"error": "Email is required"}, status=400)
 
     try:
-        subscription = SubscriptionDetails.objects.get(email=email)
-        return Response({"is_subscribed": True}, status=status.HTTP_200_OK)
-    except SubscriptionDetails.DoesNotExist:
-        return Response({"is_subscribed": False}, status=status.HTTP_200_OK)
+        customers = stripe.Customer.list(email=email).data
+        if not customers:
+            return Response({"subscribed": False})
+
+        customer = customers[0]
+
+        subscriptions = stripe.Subscription.list(customer=customer.id, status="active").data
+        
+        if subscriptions:
+            return Response({"subscribed": True})
+        
+        return Response({"subscribed": False})
+
+    except stripe.error.StripeError as e:
+        return Response({"error": str(e)}, status=400)
