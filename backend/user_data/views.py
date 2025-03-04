@@ -92,7 +92,7 @@ def process_subscription(request):
         email = request.data.get('email')
         payment_method_id = request.data.get("payment_method_id")
         if not email or not payment_method_id:
-            return Response({"error": "Payment method ID is required"}, status=400)
+            return Response({"error": "Payment method ID and Email are required"}, status=400)
 
         customers = stripe.Customer.list(email=email).data
         if customers:
