@@ -19,7 +19,7 @@ export default function Pricing() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axiosInstance.post("/api/check_subscription/", { email: email })
+    axiosInstance.post("/api/check_subscription/", { email: email }, { withCredentials: true})
       .then(res => {
         if (res.data.is_subscribed) {
           console.log('ok')
