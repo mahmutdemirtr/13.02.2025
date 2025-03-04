@@ -37,6 +37,7 @@ function AddCardForm() {
 
   const totalPriceCount = useSelector((state) => state.priceCount.totalPriceCount);
   const userData = useSelector((state) => state.instaData.userData);
+  const email = useSelector((state) => state.email.email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,13 +64,17 @@ function AddCardForm() {
       price: totalPriceCount,
     })
       .then(res => {
-        console.log(res.data);
+        return (
+          axiosInstance.post('/api/add_subscriber', {
+            email: email,
+          })
+        )
+      })
+      .then(subscriptionRes => {
 
-        // Dispatch setIsUnlocked to update the state
-        dispatch(setIsUnlocked(true));
+        dispatch(setIsUnlocked(true))
 
-        // Redirect to the profile page
-        router.push(`/profile/${userData.username}`);
+        router.push(`/profile/${userData.username}`)
       })
       .catch(err => setError(err.response?.data?.error || 'Payment failed'));
     setLoading(false);
