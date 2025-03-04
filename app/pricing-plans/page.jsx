@@ -8,6 +8,7 @@ import paymentMethods from '@/public/images/payment-methods.png';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTotalMonthCount, setTotalPriceCount } from '@/features/PricingPlan/PricingPlanSlice'; // Import the actions
+import axiosInstance from '@/lib/axios';
 
 export default function Pricing() {
   const totalMonthCount = useSelector((state) => state.priceCount.totalMonthCount);
