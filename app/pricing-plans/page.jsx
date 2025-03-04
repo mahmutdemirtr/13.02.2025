@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import doneRing from '@/public/images/done-ring-round.svg';
 import paymentMethods from '@/public/images/payment-methods.png';
