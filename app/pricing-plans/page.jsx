@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTotalMonthCount, setTotalPriceCount } from '@/features/PricingPlan/PricingPlanSlice'; // Import the actions
 import axiosInstance from '@/lib/axios';
+import { setIsUnlocked } from '@/features/instaData/instaDataSlice';
 
 export default function Pricing() {
   const totalMonthCount = useSelector((state) => state.priceCount.totalMonthCount);
@@ -21,6 +22,8 @@ export default function Pricing() {
     axiosInstance.post("/api/check_subscription/", { email: email })
       .then(res => {
         if (res.data.is_subscribed) {
+          console.log('ok')
+          dispatch(setIsUnlocked(true));
           router.push("/");  // Redirect home if already subscribed
         }
       })
