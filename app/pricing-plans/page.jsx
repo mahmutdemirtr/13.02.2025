@@ -13,12 +13,12 @@ import axiosInstance from '@/lib/axios';
 export default function Pricing() {
   const totalMonthCount = useSelector((state) => state.priceCount.totalMonthCount);
   const totalPriceCount = useSelector((state) => state.priceCount.totalPriceCount);
-  const userData = useSelector((state) => state.instaData.userData);
+  const email = useSelector((state) => state.email.email);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axiosInstance.post("/api/check_subscription/", { email: userData.email })
+    axiosInstance.post("/api/check_subscription/", { email: email })
       .then(res => {
         if (res.data.is_subscribed) {
           router.push("/");  // Redirect home if already subscribed
