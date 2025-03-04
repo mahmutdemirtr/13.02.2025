@@ -21,6 +21,7 @@ export default function Pricing() {
   useEffect(() => {
     axiosInstance.post("/api/check_subscription/", { email: email }, { withCredentials: true})
       .then(res => {
+        console.log(res.data)
         if (res.data.subscribed) {
           console.log('ok')
           dispatch(setIsUnlocked(true));
