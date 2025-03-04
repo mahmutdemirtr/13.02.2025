@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Email, Survey
+from .models import Email, Survey, SubscriptionDetails
 
 class EmailSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,4 +14,12 @@ class SurveySerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'client_email': {'read_only': True},
             'username_searched': {'read_only': True},
+        }
+
+class SubscriptionDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubscriptionDetails
+        fields = ('subscriber', 'subscription_date')
+        extra_kwargs = {
+            'subscription_date': {'read_only': True}
         }

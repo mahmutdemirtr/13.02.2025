@@ -4389,3 +4389,71 @@ Logged in using cookies.
 {'posts': '0', 'followers': '3,483', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHi9QSXjjIPXLLN60ZpaSl2dkUOz8a66z-FbHk9nncxpPBoEmIOKWCNAgjqrzxqcrA&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=6f873946c2c14c06840b15940dc1d6e1&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYCc4zfKoqZOSDS-zCXj-wK9cTugAmopOAwFE8_RrWtx3w&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
 {'posts': '0', 'followers': '3,483', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHi9QSXjjIPXLLN60ZpaSl2dkUOz8a66z-FbHk9nncxpPBoEmIOKWCNAgjqrzxqcrA&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=6f873946c2c14c06840b15940dc1d6e1&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYCc4zfKoqZOSDS-zCXj-wK9cTugAmopOAwFE8_RrWtx3w&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
 [03/Mar/2025 20:12:54] "GET /api/scrape/ HTTP/1.0" 200 557
+[03/Mar/2025 20:17:06] "POST /api/store_username/ HTTP/1.0" 200 21
+mahmut
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '0', 'followers': '3,487', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AFyOsDWadlP1v-Yd3jk_48WdFUHjEAf1gWqyz56Tv0g9NaUCHWkrxKUxWowjrw-nr8&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=fc0b87f8d8c8431f98c5518e07808e8d&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAKKmp_mRa8fGiYe0h-dFr5MgU5c2P8F2-eOWSAyF951A&oe=67CBD14F&_nc_sid=7d3ac5'}
+{'posts': '0', 'followers': '3,487', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AFyOsDWadlP1v-Yd3jk_48WdFUHjEAf1gWqyz56Tv0g9NaUCHWkrxKUxWowjrw-nr8&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=fc0b87f8d8c8431f98c5518e07808e8d&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAKKmp_mRa8fGiYe0h-dFr5MgU5c2P8F2-eOWSAyF951A&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
+{'posts': '0', 'followers': '3,487', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AFyOsDWadlP1v-Yd3jk_48WdFUHjEAf1gWqyz56Tv0g9NaUCHWkrxKUxWowjrw-nr8&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=fc0b87f8d8c8431f98c5518e07808e8d&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAKKmp_mRa8fGiYe0h-dFr5MgU5c2P8F2-eOWSAyF951A&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
+[03/Mar/2025 20:17:13] "GET /api/scrape/ HTTP/1.0" 200 557
+[03/Mar/2025 20:17:27] "POST /api/store_username/ HTTP/1.0" 200 21
+mahmut
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '0', 'followers': '3,487', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHS7l6r48DTn23BsizkMRfMbwzn4Ib1U27-SDksSCO3Iktndwh_BEkqQn4iYwADP4k&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=2b306570ee394f69ba1113b82efea8ef&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDtVi3v5ZMqRrXZtX7NtKiZtTMIhbheiyhx6ZN2ALVbmQ&oe=67CBD14F&_nc_sid=7d3ac5'}
+{'posts': '0', 'followers': '3,487', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHS7l6r48DTn23BsizkMRfMbwzn4Ib1U27-SDksSCO3Iktndwh_BEkqQn4iYwADP4k&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=2b306570ee394f69ba1113b82efea8ef&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDtVi3v5ZMqRrXZtX7NtKiZtTMIhbheiyhx6ZN2ALVbmQ&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
+{'posts': '0', 'followers': '3,487', 'following': '195', 'profile_image_url': 'https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/477617226_18485619307037241_4370089047960381066_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2AHS7l6r48DTn23BsizkMRfMbwzn4Ib1U27-SDksSCO3Iktndwh_BEkqQn4iYwADP4k&_nc_ohc=jmwt_jCdkgEQ7kNvgHxwEGf&_nc_gid=2b306570ee394f69ba1113b82efea8ef&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDtVi3v5ZMqRrXZtX7NtKiZtTMIhbheiyhx6ZN2ALVbmQ&oe=67CBD14F&_nc_sid=7d3ac5', 'full_name': 'mahmut', 'username': 'mahmut'}
+[03/Mar/2025 20:17:34] "GET /api/scrape/ HTTP/1.0" 200 557
+[03/Mar/2025 20:17:55] "POST /api/store_username/ HTTP/1.0" 200 20
+susan
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AHdlnS7TCB7DjIH587vHZSmHuhdPNCkPg4YEIIPBOEG8uRnDjvTZyAUUnErftBQU_4&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=f2745879eb214711b8b085f17610f5bc&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYCcE2Sm4aqxPe2W6nz1Du5V6xXiX5GA-AhdFWsuQpybxg&oe=67CBF18A&_nc_sid=7d3ac5'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AHdlnS7TCB7DjIH587vHZSmHuhdPNCkPg4YEIIPBOEG8uRnDjvTZyAUUnErftBQU_4&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=f2745879eb214711b8b085f17610f5bc&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYCcE2Sm4aqxPe2W6nz1Du5V6xXiX5GA-AhdFWsuQpybxg&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AHdlnS7TCB7DjIH587vHZSmHuhdPNCkPg4YEIIPBOEG8uRnDjvTZyAUUnErftBQU_4&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=f2745879eb214711b8b085f17610f5bc&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYCcE2Sm4aqxPe2W6nz1Du5V6xXiX5GA-AhdFWsuQpybxg&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+[03/Mar/2025 20:18:06] "GET /api/scrape/ HTTP/1.0" 200 556
+[03/Mar/2025 20:19:21] "POST /api/store_username/ HTTP/1.0" 200 20
+susan
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AGlFccNS0o1fxZqknQiktjyI_Gi3PBFugfbNuoRTR1Ew20_Md65_tL47DPToSaZato&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=1986e842b021457eabc6adb113a7d10b&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBdxdSS1vMD-k4h_igCNecrrOf0IUA0m6d4_U5Xn1wo0Q&oe=67CBF18A&_nc_sid=7d3ac5'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AGlFccNS0o1fxZqknQiktjyI_Gi3PBFugfbNuoRTR1Ew20_Md65_tL47DPToSaZato&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=1986e842b021457eabc6adb113a7d10b&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBdxdSS1vMD-k4h_igCNecrrOf0IUA0m6d4_U5Xn1wo0Q&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AGlFccNS0o1fxZqknQiktjyI_Gi3PBFugfbNuoRTR1Ew20_Md65_tL47DPToSaZato&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=1986e842b021457eabc6adb113a7d10b&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBdxdSS1vMD-k4h_igCNecrrOf0IUA0m6d4_U5Xn1wo0Q&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+[03/Mar/2025 20:19:27] "GET /api/scrape/ HTTP/1.0" 200 556
+[03/Mar/2025 20:19:58] "POST /api/store_username/ HTTP/1.0" 200 20
+susan
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AGLsM3gHWWzy7GxaImGYC66l-_zSEXAbskYrBrE_cS4VkqxaK82s-8woMlf9NOROpA&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=5328cd6268674fc0b47a052adec5f8f0&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYB-UkBQkoL9_UCZUSQfU06iGrRO_7myaAU8N8vKJA0qIQ&oe=67CBF18A&_nc_sid=7d3ac5'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AGLsM3gHWWzy7GxaImGYC66l-_zSEXAbskYrBrE_cS4VkqxaK82s-8woMlf9NOROpA&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=5328cd6268674fc0b47a052adec5f8f0&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYB-UkBQkoL9_UCZUSQfU06iGrRO_7myaAU8N8vKJA0qIQ&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AGLsM3gHWWzy7GxaImGYC66l-_zSEXAbskYrBrE_cS4VkqxaK82s-8woMlf9NOROpA&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=5328cd6268674fc0b47a052adec5f8f0&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYB-UkBQkoL9_UCZUSQfU06iGrRO_7myaAU8N8vKJA0qIQ&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+/home/ec2-user/13.02.2025/backend/user_data/scrape_insta.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Cookies loaded successfully.
+Logged in using cookies.
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AEs2Vwzv56YZRSfTL_mX4YbCY6FHU6GeJTJ9xL_fiEpz4pVgxTkD4Az4Z6WHzec9bg&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=dfb4465bdb3845bd80a638499ef9016d&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBnayXbmtNgl3E80ts8jhH0oaPOFtWaQQWlwZ7BLHT36A&oe=67CBF18A&_nc_sid=7d3ac5'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AEs2Vwzv56YZRSfTL_mX4YbCY6FHU6GeJTJ9xL_fiEpz4pVgxTkD4Az4Z6WHzec9bg&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=dfb4465bdb3845bd80a638499ef9016d&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBnayXbmtNgl3E80ts8jhH0oaPOFtWaQQWlwZ7BLHT36A&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+{'posts': '1,491', 'followers': '12.8K', 'following': '1,518', 'profile_image_url': 'https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/18382185_301414823613869_6436887715811164160_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2AEs2Vwzv56YZRSfTL_mX4YbCY6FHU6GeJTJ9xL_fiEpz4pVgxTkD4Az4Z6WHzec9bg&_nc_ohc=ozCeQOockQkQ7kNvgHAqnFw&_nc_gid=dfb4465bdb3845bd80a638499ef9016d&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBnayXbmtNgl3E80ts8jhH0oaPOFtWaQQWlwZ7BLHT36A&oe=67CBF18A&_nc_sid=7d3ac5', 'full_name': 'susan', 'username': 'susan'}
+System check identified no issues (0 silenced).
+March 03, 2025 - 20:22:31
+Django version 4.2.18, using settings 'app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+/home/ec2-user/13.02.2025/backend/user_data/scrape_insta.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 03, 2025 - 20:22:59
+Django version 4.2.18, using settings 'app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Not Found: /.env
+[03/Mar/2025 21:21:49] "GET /.env HTTP/1.0" 404 2190
+Not Found: /
+[03/Mar/2025 21:50:34] "GET / HTTP/1.0" 404 2160

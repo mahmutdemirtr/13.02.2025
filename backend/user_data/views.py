@@ -6,8 +6,9 @@ from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
-from .models import Email, Survey, SearchedUsername
-from .serializer import EmailSerializer, SurveySerializer
+from rest_framework.generics import ListCreateAPIView
+from .models import Email, Survey, SearchedUsername, SubscriptionDetails
+from .serializer import EmailSerializer, SurveySerializer, SubscriptionDetailSerializer
 from .scrape_insta import fetch_user
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -84,6 +85,10 @@ class ScrapeData(APIView):
         user_info = fetch_user(username)
         print(user_info)
         return Response(user_info)
+
+class AddSubscriber(ListCreateAPIView):
+    queryset = SubscriptionDetails.objects.all()
+    serializer_class = SubscriptionDetailSerializer
 
 @api_view(["POST"])
 def process_payment(request):

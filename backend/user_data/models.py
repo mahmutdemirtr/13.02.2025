@@ -28,3 +28,10 @@ class SearchedUsername(models.Model):
 
     def __str__(self):
         return self.username
+
+class SubscriptionDetails(models.Model):
+    subscriber = models.ForeignKey(
+        Email,
+        on_delete=models.CASCADE
+    )
+    subscription_date = models.DateTimeField(auto_now_add=True)
