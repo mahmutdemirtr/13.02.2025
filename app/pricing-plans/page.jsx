@@ -21,7 +21,7 @@ export default function Pricing() {
   useEffect(() => {
     axiosInstance.post("/api/check_subscription/", { email: email }, { withCredentials: true})
       .then(res => {
-        if (res.data.is_subscribed) {
+        if (res.data.subscribed) {
           console.log('ok')
           dispatch(setIsUnlocked(true));
           setTimeout(() => router.push("/"), 100);
