@@ -27,7 +27,7 @@ export default function Pricing() {
         if (res.data.subscribed) {
           console.log('ok')
           dispatch(setIsUnlocked(true));
-          setTimeout(() => router.push("/"));
+          router.push("/")
         }
       })
       .catch(err => console.error("Error checking subscription", err));
